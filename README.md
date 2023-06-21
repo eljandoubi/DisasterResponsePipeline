@@ -35,7 +35,8 @@ This project is divided in the following key sections:
 * SQLlite Database Libraqries: SQLalchemy
 * Web App and Data Visualization: Flask, Plotly
 
-## Files Descriptions <a name="files"></a>
+<a name="files"></a>
+## Files Descriptions 
 
 The files structure is arranged as below:
 
