@@ -19,7 +19,14 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 nltk.download(['punkt','wordnet', 'averaged_perceptron_tagger'])
 
 class StartingVerbExtractor(BaseEstimator, TransformerMixin):
-
+    """
+    Starting Verb Extractor class
+    
+    This class extract the starting verb of a sentence,
+    creating a new feature for the NLP pipeline.
+    
+    """
+    
     def starting_verb(self, text):
         sentence_list = nltk.sent_tokenize(text)
         for sentence in sentence_list:
@@ -37,7 +44,18 @@ class StartingVerbExtractor(BaseEstimator, TransformerMixin):
         return pd.DataFrame(X_tagged)
 
 def load_data(database_filepath):
-    
+    """
+       Function:
+       load data from database
+
+       Args:
+       database_filepath: the path of the database
+
+       Return:
+       X (DataFrame) : Message features dataframe
+       Y (DataFrame) : target dataframe
+       category (list of str) : target labels list
+    """
     engine = create_engine('sqlite:///'+database_filepath)
     df = pd.read_sql_table(database_filepath, engine)
     X = df['message']
@@ -47,6 +65,13 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    """
+    Function: split text into words and return the root form of the words
+    Args:
+      text(str): the message
+    Return:
+      lemm(list of str): a list of the root form of the message words
+    """
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 
@@ -59,6 +84,13 @@ def tokenize(text):
 
 
 def build_model():
+     """
+        - Build the model with the proposed parameters
+        
+        Returns:
+            cv (GridSearchCV): Machine learning model
+    """
+    
     pipeline = Pipeline([
         ('features', FeatureUnion([
 
@@ -89,6 +121,16 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+        - Evaluate model
+        
+        Args:
+            model (Predicter model): Machine learning model (Predicter)
+            X_test (pandas series): Test data set of X
+            Y_test (pandas dataframe): Test data set of Y
+            category_names (list): Name of categories
+    """
+    
     Y_pred =model.predict(X_test)
     for i,col in enumerate(category_names):
         print(col)
@@ -96,6 +138,13 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """
+        - Saves model in pickle file
+        
+        Args:
+            model (Predicter model): Machine learning model (Predicter)
+            model_filepath (str): Path where model will save.
+    """
     joblib.dump(model, model_filepath,compress=9)
 
 
