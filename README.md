@@ -13,6 +13,8 @@
 <a name="descripton"></a>
 ## Description
 
+Following a disaster, responsible agencies are inundated with a multitude of direct or social media communications at a time when disaster response organizations are least equipped to sift through and prioritize the most crucial messages. It is common for only one message in a thousand to hold relevance for disaster response professionals. In such situations, various organizations typically handle specific aspects of the problem. For instance, one organization focuses on providing clean water, another deals with clearing blocked roads, and yet another ensures the availability of medical supplies.
+
 The project aim is to build a Natural Language Processing (NLP) model to categorize messages on a real time basis. The dataset contains pre-labelled tweet and messages from real-life disaster events.
 
 This project is divided in the following key sections:
