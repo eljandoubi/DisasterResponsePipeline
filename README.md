@@ -24,17 +24,6 @@ This project is divided in the following key sections:
 2. Build a machine learning pipeline to train a model that can classify text message in various categories
 3. Run a web app which can show model results in real time
 
-<a name="getting_started"></a>
-## Getting Started
-
-<a name="dependencies"></a>
-### Dependencies
-* Python 3.6+
-* Machine Learning Libraries: NumPy, SciPy, Pandas, Sciki-Learn
-* Natural Language Process Libraries: NLTK
-* SQLlite Database Libraqries: SQLalchemy
-* Web App and Data Visualization: Flask, Plotly
-
 <a name="files"></a>
 ## Files Descriptions 
 
@@ -54,6 +43,18 @@ The files structure is arranged as below:
 			- process_data.py: ETL process
 		- \models
 			- train_classifier.py: ML & NLP pipeline code
+
+
+<a name="getting_started"></a>
+## Getting Started
+
+<a name="dependencies"></a>
+### Dependencies
+* Python 3.6+
+* Machine Learning Libraries: NumPy, SciPy, Pandas, Sciki-Learn
+* Natural Language Process Libraries: NLTK
+* SQLlite Database Libraqries: SQLalchemy
+* Web App and Data Visualization: Flask, Plotly
 
 <a name="installation"></a>
 ### Installation
