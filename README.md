@@ -5,7 +5,8 @@
 
 ## Table of Contents
 1. [Description](#description)
-2. [Getting Started](#getting_started)
+2. [Files Descriptions](#files)
+3. [Getting Started](#getting_started)
 	1. [Dependencies](#dependencies)
 	2. [Installation](#installation)
 
@@ -33,6 +34,25 @@ This project is divided in the following key sections:
 * Natural Language Process Libraries: NLTK
 * SQLlite Database Libraqries: SQLalchemy
 * Web App and Data Visualization: Flask, Plotly
+
+## Files Descriptions <a name="files"></a>
+
+The files structure is arranged as below:
+
+	- README.md: read me file
+ 	- requirement.txt: dependencies list
+	- workspace
+		- \app
+			- run.py: flask file to run the app
+			- \templates
+				- master.html: main page of the web application 
+				- go.html: result web page
+		- \data
+			- disaster_categories.csv: categories dataset
+			- disaster_messages.csv: messages dataset
+			- process_data.py: ETL process
+		- \models
+			- train_classifier.py: ML & NLP pipeline code
 
 <a name="installation"></a>
 ### Installation
